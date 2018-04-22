@@ -75,14 +75,14 @@ weatherForecast =
 </script>
 
 //Calling getWeather
-<script async defer>
-src="https:www.getmyweather.com/getWeather?
+<script async defer
+src="https:www.getmyweather.com/getWeather?""
 key=<Your_API_Key>&
 callback=initMap&
 location=<Lat:Long>&
 specificity=<Specificity>&
 time=<Time>&
-">
+>
 </script>
 
 ```
