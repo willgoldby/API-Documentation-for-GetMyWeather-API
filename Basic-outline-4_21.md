@@ -46,7 +46,7 @@ To use GetMyWeather, you will need know to simple HTML and Javascript syntax.
 # How much does this it cost?
 
 - First 100,000 calls/day:  $.01 cent per call
-- After 100,000 calls/day: contact us at 1-888-alan-getweather
+- After 100,000 calls/day contact us at 1-888-alan-getweather
 
 # How do I make requests to GetMyWeather?
 
@@ -57,6 +57,50 @@ You will need to supply the following information:
  * A numerical value that represent **meters away from origin**
  * The **time** in month/day/year format and the time in hr/minute format
  * An **API key**.
+
+
+ #### GetMyWeather request example
+
+```javascript
+//Injecting result into HTML page
+<div id='forecast'></div>
+
+//Initializing getWeather
+<script type='text/javascript'>
+var weatherForecast;
+function init(){
+weatherForecast =
+  new getWeather (document.getElementByID('forecast'))
+}
+</script>
+
+//Calling getWeather
+<script async defer
+src="https:www.getmyweather.com/getWeather?
+key=<Your_API_Key>&
+callback=initMap&
+location=<Lat:Long>&
+specificity=<Specificity>&
+time=<Time>&
+">
+</script>
+
+```
+
+##### Returned values
+
+sample return package
+```javascript
+
+<div class="forcast">
+    <div class="temperature">78</div>
+    <div class="windspeed">15</div>
+    <div class="chanceRain">30</div>
+    <div class="trust">80</div>
+</div>
+```
+
+
 
 ### Origin point in latitude and longitude
 
@@ -85,17 +129,20 @@ Provide a numerical value that represents meters away from origin.
 
 ### Time
 
-Provide a time period in two digit month, two digit day, four digit year, two digit hour (24hr standard), and two digit minute, with each value separated by a backslash.
+Provide a time period in two-digit month, two-digit day, four-digit year, two-digit hour (24hr standard), and two-digit minute, with each value separated by a backslash.
 
 mm/dd/year/hr/minute
 
-`09/07/2018/23/55` This is a request on for September, 7, 2018 at 11PM and 23 minutes.
+
+For example, `09/07/2018/23/55` is a request on for September, 7, 2018 at 11PM and 23 minutes.
 
 **BE CAUTIOUS**: Values not provided in this format will return the following error message:
 
 `error: date range incorrect.`
 
 #### Date provided and confidence of forecast
+
+Predicting weather is hard. Use this table to accurately inform your users of the confidence for the forecast.
 
 Days out | Confidence as a percentage
 ---- | ----
@@ -104,7 +151,8 @@ Days out | Confidence as a percentage
 5 - 6 | 70 %
 7 - 8 | 60 %
 9 - 10 | 50 %
-10 more | less than 50 %
+10 or more | less than 50 %
+
 
 
 ### API Key
