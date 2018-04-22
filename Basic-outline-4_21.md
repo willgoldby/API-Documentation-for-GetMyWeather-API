@@ -34,7 +34,7 @@ GetMyWeather provides four weather data points
 
 Parameter | Returned value
 _________ | ___________
-Temperature: degrees farhanehiet
+Temperature | degrees farhanehiet
 
 Wind speed | kph (kilometers per hour)
 
