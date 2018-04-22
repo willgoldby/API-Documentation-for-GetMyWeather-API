@@ -12,7 +12,7 @@ Developers can use the GetMyWeather API for a variety of reasons.
 
 GetMyWeather's confidence is a function of how far in the future the request is. Its confidence is high (up to 90 and 100 percent) for 1 and 2 days from the time the request is made. Its confidence decreases as predictions move further out. At 10 days out, GetMyWeather will be only 50 percent confident. After 10 days, the confidence range is significantly less than 50 percent.
 
-## How are region and time determined?
+# How are region and time determined?
 
 A region is determined by two values: origin and radius. The origin must be given in latitude and longitude. The radius must be given as a numerical value (?can it be floating point) and represent meters from the origin.
 
@@ -30,7 +30,7 @@ The forecast would encompass the following area within the red circle at 11:23 P
 
 GetMyWeather provides four weather parameters: temperature, humidity, wind speed, and chance of precipitation.
 
-# Parameters
+## Parameters
 
 Parameter | Returned value | Example
 ----------| ---------- | ---
@@ -50,12 +50,32 @@ To use GetMyWeather, you will need know to simple HTML and Javascript syntax.
 
 # How do I make requests to GetMyWeather?
 
-To make a request, you will need to supply four values.
+##To make a request, you will need to supply four values.
 
-- An origin point, in latitude and longitude
-- Specificity in
+You will need to supply the following:
+ * An origin in latitude and longitude
+ * A numerical value that represent meters away from origin,
+ * The time in month/day/year format and the time in hr/minute format,
+ * An API key.
 
+### Origin point in latitude and longitude
 
+Provide latitude and longitude in the following format
+
+`<NN.NNNN>:<NN.NNNN>`
+
+For example, Leicester's latitude and longitude would be supplied as
+`52.6369:1.1398`.
+
+#### What if I only have zip code? Can I use that?
+
+If you do not have an origin in latitude and longitude, you will need to convert a user's location value into latitude and longitude before making a request to the API. Here is a reference link for converting location data: [How do I convert location into latitude and longitude]?(https://support.google.com/maps/answer/18539?co=GENIE.Platform%3DDesktop&hl=en)
+
+### Meters away from origin
+
+### Time
+
+### API Key
 ** Do more than tell developers what they can expect within those ranges.
 'If you do this, this will happen. If you put too small of a location, you will get x returned.' I need to tell developers of the CONSEQUENCES of their calls for all the parameters. **
 
