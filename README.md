@@ -23,7 +23,7 @@ For example, if you wanted a forecast for Leicester, England within 100 meters o
 If you supplied 52.6369, 1.1398 and 100 and 09/07/2018/23/55, you would get a weather forecast within 100 meters of that lat/long on September, 7, 2018 at 11 PM and 23 minutes.
 
 The forecast would encompass the following area within the red circle at 11:23 PM on September 7, 2018.
-____
+
 [logo]: /images/leicester-map-with-radius.jpg
 
 
