@@ -53,23 +53,26 @@ To use GetMyWeather, you will need know to simple HTML and Javascript syntax.
 ## To make a request, you will need to supply four values.
 
 You will need to supply the following information:
- * An origin in latitude and longitude
- * A numerical value that represent meters away from origin
- * The time in month/day/year format and the time in hr/minute format
- * An API key.
+ * An _origin_ in latitude and longitude
+ * A numerical value that represent _meters away from origin_
+ * The _time_ in month/day/year format and the time in hr/minute format
+ * An _API key_.
 
 ### Origin point in latitude and longitude
 
-Provide latitude and longitude in the following format
+Provide latitude and longitude in the following format:
 
 `<NN.NNNN>:<NN.NNNN>`
 
-For example, Leicester's latitude and longitude would be supplied as
+For example, Leicester's latitude and longitude would be supplied as the following:
+
 `52.6369:1.1398`.
 
 #### What if I only have zip code? Can I use that?
 
-If you do not have an origin in latitude and longitude, you will need to convert a user's location value into latitude and longitude before making a request to the API. Here is a reference link for converting location data: [How do I convert location into latitude and longitude?](https://support.google.com/maps/answer/18539?co=GENIE.Platform%3DDesktop&hl=en)
+If you do not have an origin in latitude and longitude, you will need to convert a user's location value into latitude and longitude before making a request to the API.
+
+Here is a reference link for converting location data: [How do I convert a location into latitude and longitude?](https://support.google.com/maps/answer/18539?co=GENIE.Platform%3DDesktop&hl=en)
 
 ### Meters away from origin
 
