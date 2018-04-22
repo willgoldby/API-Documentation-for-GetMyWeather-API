@@ -32,13 +32,15 @@ GetMyWeather provides four weather data points
 
 # Parameters
 
+Parameter | Returned value
+_________ | ___________
 Temperature: degrees farhanehiet
 
-Wind speed: kph (kilometers per hour)
+Wind speed | kph (kilometers per hour)
 
-Humidity: 0-100 (represents a number in percentage. For example, 80 means 80% humidity.)
+Humidity | 0-100 (represents a number in percentage. For example, 80 means 80% humidity.)
 
-precipitation: 0-100 (represents a number in percentage. For example, 50 mean 50% chance of percipitation.)
+precipitation | 0-100 (represents a number in percentage. For example, 50 mean 50% chance of percipitation.)
 
 # How do I make requests to GetMyWeather?
 
