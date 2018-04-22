@@ -1,37 +1,160 @@
-## Welcome to GitHub Pages
+# What is GetMyWeater API?
+The GetMyWeather API provides a weather forecast for a given region and time. It provides the temperature, wind speed, humidity, and the chance of precipitation.
 
-You can use the [editor on GitHub](https://github.com/willgoldby/GetMyWeather/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+# How can I use GetMyWeather API?
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Developers who are familiar with HTML and Javascript can use the GetMyWeather API for a variety of reasons.
+* Provide weather information on websites and mobile applications.
 
-### Markdown
+* Add parameters to a code base so content is displayed as a function of the weather. This can be useful for sites that make recommendations or predications based on weather.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# How reliable are the results from GetMyWeather?
 
-```markdown
-Syntax highlighted code block
+GetMyWeather's confidence is a function of how far in the future the request is. Its confidence is high (up to 90 and 100 percent) for 1 and 2 days from the time the request is made. Its confidence decreases as predictions move further out. At 10 days out, GetMyWeather will be only 50 percent confident. After 10 days, the confidence range is significantly less than 50 percent.
 
-# Header 1
-## Header 2
-### Header 3
+# How are region and time determined?
 
-- Bulleted
-- List
+A region is determined by providing two values: an origin and a radius. The origin must be given in latitude and longitude. The radius must be given as a numerical value |can it be floating point?| and represents meters from the origin.
 
-1. Numbered
-2. List
+The time is determined by providing a specific day at a specific time. The day must be provided within month/day/year format and the time must be provided in the hour/minute format using the 24 hour standard.
 
-**Bold** and _Italic_ and `Code` text
+For example, if you wanted a forecast for Leicester, England within 100 meters of the city on a given day, you would supply the latitude and longitude for Leicester as the origin point, 100 as the value in meters away from the origin, and then the day, month, year, and then the hour and minute.
 
-[Link](url) and ![Image](src)
+If you supplied 52.6369, 1.1398 and 100 and 09/07/2018/23/55, you would get a weather forecast within 100 meters of that lat/long on September, 7, 2018 at 11 PM and 23 minutes.
+
+The forecast would encompass the following area within the red circle at 11:23 PM on September 7, 2018.
+![image of Leicester with radius](/images/leicester-map-with-radius.jpg)
+
+
+# What type and kind of data does GetMyWeather return?
+
+GetMyWeather provides four weather parameters: temperature, humidity, wind speed, and chance of precipitation.
+
+## Parameters
+
+Parameter | Returned value | Example
+----------| ---------- | ---
+Temperature |  A number that represents degrees Fahrenheit | `72` means 72 degrees Fahrenheit
+Wind speed | A number that represents kph (kilometers per hour) | `21` means 21 kph
+Humidity | A number between 0-100 that represents a percentage| `80` means 80 percent humidity.
+Precipitation | A number between 0-100 that represents a percentage| `50` means 50 percent chance of precipitation
+
+# How much does GetMyWeather cost to use?
+
+- First 100,000 calls/day:  $.01 cent per call
+- After 100,000 calls/day contact us at 1-888-alan-getweather
+
+# How do I make requests to GetMyWeather?
+
+## To make a request, you will need to supply four values.
+
+You will need to supply the following information:
+ * **ORIGIN**: this must be supplied in latitude and longitude
+ * **METERS AWAY FROM ORIGIN**: this must be supplied as a numerical value
+ * **TIME**: this must be supplied in the month/day/year format and the time in hr/minute format
+ * **API KEY**: this must be supplied for all requests
+
+
+### Origin point in latitude and longitude
+
+Provide latitude and longitude in the following format:
+
+`<NN.NNNN>:<NN.NNNN>`
+
+For example, Leicester's latitude and longitude would be supplied as the following:
+
+`52.6369:1.1398`
+
+#### What if I only have the zip code or address? Can I use that?
+
+GetMyWeather only uses latitude and longitude. Therefore, you will need to convert a user's location value into latitude and longitude before making a request to the API.
+
+Here is a reference link for converting location data: [How do I convert a location into latitude and longitude?](https://support.google.com/maps/answer/18539?co=GENIE.Platform%3DDesktop&hl=en)
+
+### Meters away from origin
+
+Provide a numerical value that represents meters away from origin.
+|What is the largest value I can supply?|
+
+**BE CAUTIOUS**: A value not within ?range? will return the following error message:
+
+`error: radius value not within range.`
+
+### Time
+
+Provide a time period in two-digit month, two-digit day, four-digit year, two-digit hour (24hr standard), and two-digit minute, with each value separated by a backslash.
+
+mm/dd/year/hr/minute
+
+
+For example, `09/07/2018/23/55` is a request on for September, 7, 2018 at 11PM and 23 minutes.
+
+**BE CAUTIOUS**: Values not provided in this format will return the following error message:
+
+`error: date range incorrect.`
+
+#### Date provided and confidence of forecast
+
+Predicting weather is hard. Use this table to accurately inform your users of the confidence for the forecast.
+
+Days out | Confidence as a percentage
+---- | ----
+1 - 2 | 100 %
+3 - 4 | 80 %
+5 - 6 | 70 %
+7 - 8 | 60 %
+9 - 10 | 50 %
+10 or more | less than 50 %
+
+
+### API key
+Register for a API key at getmyweather.com. To register, you will need a credit card.
+
+**BE CAUTIOUS**: Without an API key, you cannot make a request. You will receive the following error message:
+`error: request invalid.
+
+# GetMyWeather request example
+
+```javascript
+//Injecting result into HTML page
+<div id='forecast'></div>
+
+//Initializing getWeather
+<script type='text/javascript'>
+var weatherForecast;
+function init(){
+weatherForecast =
+  new getWeather (document.getElementByID('forecast'))
+}
+</script>
+
+//Calling getWeather
+<script async defer
+src="https:www.getmyweather.com/getWeather?"
+key=<Your_API_Key>&
+callback=initMap&
+location=<Lat:Long>&
+specificity=<Specificity>&
+time=<Time>&
+>
+</script>
+
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+#### Returned values
 
-### Jekyll Themes
+sample return package
+```javascript
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/willgoldby/GetMyWeather/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+<div class="forcast">
+    <div class="temperature">78</div>
+    <div class="windspeed">15</div>
+    <div class="chanceRain">30</div>
+    <div class="trust">80</div>
+</div>
+```
 
-### Support or Contact
+# What if I cannot get my API request to work?
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Email alan.support@getmyweather.com or ask a question on our support forum at getmyweathersupport.com.
+
