@@ -3,7 +3,7 @@ The GetMyWeather API provides weather forecasts for a user-specified region and 
 
 # How can I use GetMyWeather API?
 
-Developers can use the GetMyWeather API for a variety of reasons.
+Developers who are familiar with HTML and Javascript can use the GetMyWeather API for a variety of reasons.
 * Provide weather information websites and mobile applications.
 
 * Add parameters to code. For example, certain content should be displayed when certain weather conditions exists, you can use GetMyWeather to check for those conditions. This can be useful for sites that make recommendations or predications based on weather.
@@ -38,10 +38,6 @@ Temperature |  A number that represents degrees Fahrenheit. | `72` means 72 degr
 Wind speed | A number that represents kph (kilometers per hour) | `21` means 21 kph
 Humidity | A number between 0-100 that represents a percentage| `80` means 80 percent humidity.
 Precipitation | A number between 0-100 that represents a percentage| `50` means 50 percent chance of precipitation
-
-# What do I need to use this API?
-
-To use GetMyWeather, you will need know to simple HTML and Javascript syntax.
 
 # How much does this it cost?
 
@@ -117,8 +113,10 @@ Days out | Confidence as a percentage
 ### API key
 Register for a API key at getmyweather.com. To register, you will need a credit card.
 
+**BE CAUTIOUS**: Without an API key, you cannot make a request. You will receive the following error message:
+`error: request invalid.
 
-#### Get My Weather request example
+# GetMyWeather request example
 
 ```javascript
 //Injecting result into HTML page
