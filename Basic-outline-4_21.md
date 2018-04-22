@@ -1,20 +1,20 @@
 # What is GetMyWeater API?
-The GetMyWeather API provides a weather forecast for a given region and time. It provides the temperature, wind speed, humidity, and chance of precipitation.
+The GetMyWeather API provides a weather forecast for a given region and time. It provides the temperature, wind speed, humidity, and the chance of precipitation.
 
 # How can I use GetMyWeather API?
 
-Developers who are familiar with HTML and Javascript can use GetMyWeather API for a variety of reasons:
+Developers who are familiar with HTML and Javascript can use the GetMyWeather API for a variety of reasons.
 * Provide weather information on websites and mobile applications.
 
 * Add parameters to a code base so content is displayed as a function of the weather. This can be useful for sites that make recommendations or predications based on weather.
 
 # How reliable are the results from GetMyWeather?
 
-GetMyWeather's confidence is a function of how far in the future the request is made. Its confidence is high (up to 90 and 100 percent) for 1 and 2 days from the time the request is made. Its confidence decreases as predictions move further out. At 10 days out, GetMyWeather will be only 50 percent confident. After 10 days, the confidence range is significantly less than 50 percent.
+GetMyWeather's confidence is a function of how far in the future the request is. Its confidence is high (up to 90 and 100 percent) for 1 and 2 days from the time the request is made. Its confidence decreases as predictions move further out. At 10 days out, GetMyWeather will be only 50 percent confident. After 10 days, the confidence range is significantly less than 50 percent.
 
 # How are region and time determined?
 
-A region is determined by providing two values: an origin and a radius. The origin must be given in latitude and longitude. The radius must be given as a numerical value (can it be floating point?) and represents meters from the origin.
+A region is determined by providing two values: an origin and a radius. The origin must be given in latitude and longitude. The radius must be given as a numerical value |can it be floating point?| and represents meters from the origin.
 
 The time is determined by providing a specific day at a specific time. The day must be provided within month/day/year format and the time must be provided in the hour/minute format using the 24 hour standard.
 
