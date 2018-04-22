@@ -70,7 +70,8 @@ For example, Leicester's latitude and longitude would be supplied as the followi
 `52.6369:1.1398`
 
 **BE CAUTIOUS**: GetMyWeather must have location data in latitude:longitude format. If you provide incorrect values, you will get the following error message returned:
-`error: invalid location data supplied`
+
+> `error: invalid location data supplied`
 
 #### What if I only have the zip code or address? Can I use that?
 
@@ -85,7 +86,7 @@ Provide a numerical value that represents the meters away from the origin.
 
 **BE CAUTIOUS**: A value not within (range?) will return the following error message:
 
-`error: radius value not within range`
+> `error: radius value not within range`
 
 ### Time
 
@@ -98,7 +99,7 @@ For example, `09/07/2018/23/55` is a request on for September, 7, 2018 at 11PM a
 
 **BE CAUTIOUS**: Values not provided in this format will return the following error message:
 
-`error: date range incorrect`
+> `error: date range incorrect`
 
 ## Date provided and confidence of forecast
 
@@ -118,7 +119,7 @@ Days out | Confidence as a percentage
 Register for a API key at getmyweather.com. To register, you will need a credit card.
 
 **BE CAUTIOUS**: Without an API key, you cannot make a request. You will receive the following error message:
-`error: request invalid`
+> `error: request invalid`
 
 # GetMyWeather request example
 
