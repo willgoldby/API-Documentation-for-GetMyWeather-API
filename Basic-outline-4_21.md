@@ -14,7 +14,7 @@ GetMyWeather's confidence is a function of how far in the future the request is.
 
 # How are region and time determined?
 
-A region is determined by providing two values: an origin and a radius. The origin must be given in latitude and longitude. The radius must be given as a numerical value (?can it be floating point) and represents meters from the origin.
+A region is determined by providing two values: an origin and a radius. The origin must be given in latitude and longitude. The radius must be given as a numerical value |can it be floating point?| and represents meters from the origin.
 
 The time is determined by providing a specific day at a specific time. The day must be provided within month/day/year format and the time must be provided in the hour/minute format using the 24 hour standard.
 
@@ -46,9 +46,6 @@ Precipitation | A number between 0-100 that represents a percentage| `50` means 
 
 # How do I make requests to GetMyWeather?
 
-** Do more than tell developers what they can expect within those ranges.
-'If you do this, this will happen. If you put too small of a location, you will get x returned.' I need to tell developers of the CONSEQUENCES of their calls for all the parameters. **
-
 ## To make a request, you will need to supply four values.
 
 You will need to supply the following information:
@@ -77,7 +74,7 @@ Here is a reference link for converting location data: [How do I convert a locat
 ### Meters away from origin
 
 Provide a numerical value that represents meters away from origin.
-(?What is the largest value I can supply)
+|What is the largest value I can supply?|
 
 **BE CAUTIOUS**: A value not within ?range? will return the following error message:
 
