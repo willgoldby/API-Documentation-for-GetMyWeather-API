@@ -24,8 +24,11 @@ If you supplied 52.6369, 1.1398 and 100 and 09/07/2018/23/55, you would get a we
 
 The forecast would encompass the following area within the red circle at 11:23 PM on September 7, 2018.
 
-![radius map][/images/leicester-map-with-radius.jpg]
+____
 
+![radius map](/images/leicester-map-with-radius.jpg)
+
+____
 
 # What type and kind of data does GetMyWeather return?
 
