@@ -99,12 +99,12 @@ mm/dd/year/hr/minute
 
 Days out | Confidence as a percentage
 ---- | ----
-1 - 2 | 100  `
-3 - 4 | 80
-5 - 6 | 70
-7 - 8 | 60
-9 - 10 | 50
->10 | <50
+1 - 2 | 100 %
+3 - 4 | 80 %
+5 - 6 | 70 %
+7 - 8 | 60 %
+9 - 10 | 50 %
+10 more | less than 50 %
 
 
 ### API Key
