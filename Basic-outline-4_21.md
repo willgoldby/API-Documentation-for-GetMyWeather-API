@@ -53,10 +53,10 @@ To use GetMyWeather, you will need know to simple HTML and Javascript syntax.
 ## To make a request, you will need to supply four values.
 
 You will need to supply the following information:
- * An _origin_ in latitude and longitude
- * A numerical value that represent _meters away from origin_
- * The _time_ in month/day/year format and the time in hr/minute format
- * An _API key_.
+ * An *origin* in latitude and longitude
+ * A numerical value that represent *meters away from origin*
+ * The *time* in month/day/year format and the time in hr/minute format
+ * An *API key*.
 
 ### Origin point in latitude and longitude
 
@@ -66,17 +66,46 @@ Provide latitude and longitude in the following format:
 
 For example, Leicester's latitude and longitude would be supplied as the following:
 
-`52.6369:1.1398`.
+`52.6369:1.1398`
 
-#### What if I only have zip code? Can I use that?
+#### What if I only have the zip code or address? Can I use that?
 
-If you do not have an origin in latitude and longitude, you will need to convert a user's location value into latitude and longitude before making a request to the API.
+GetMyWeather only uses latitude and longitude. Therefore, you will need to convert a user's location value into latitude and longitude before making a request to the API.
 
 Here is a reference link for converting location data: [How do I convert a location into latitude and longitude?](https://support.google.com/maps/answer/18539?co=GENIE.Platform%3DDesktop&hl=en)
 
 ### Meters away from origin
 
+Provide a numerical value that represents meters away from origin.
+(?What is the largest value I can supply)
+
+*BE CAUTIOUS*: A value not within ?range? will return the following error message:
+
+`error: radius value not within range.`
+
 ### Time
+
+Provide a time period in two digit month, two digit day, four digit year, two digit hour (24hr standard), and two digit minute, with each value separated by a backslash.
+
+mm/dd/year/hr/minute
+
+`09/07/2018/23/55` This is a request on for September, 7, 2018 at 11PM and 23 minutes.
+
+*BE CAUTIOUS*: Values not provided in this format will return the following error message:
+
+`error: date range incorrect.`
+
+#### Date provided and confidence of forecast
+
+Days out | Confidence as a percentage
+---- | ----
+1 - 2 | 100  `
+3 - 4 | 80
+5 - 6 | 70
+7 - 8 | 60
+9 - 10 | 50
+>10 | <50
+
 
 ### API Key
 ** Do more than tell developers what they can expect within those ranges.
