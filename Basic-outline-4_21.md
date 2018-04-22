@@ -59,7 +59,7 @@ You will need to supply the following information:
  * An **API key**.
 
 
- #### GetMyWeather request example
+#### Get My Weather request example
 
 ```javascript
 //Injecting result into HTML page
@@ -87,7 +87,7 @@ time=<Time>&
 
 ```
 
-##### Returned values
+#### Returned values
 
 sample return package
 ```javascript
