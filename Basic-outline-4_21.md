@@ -50,7 +50,7 @@ To use GetMyWeather, you will need know to simple HTML and Javascript syntax.
 
 # How do I make requests to GetMyWeather?
 
-##To make a request, you will need to supply four values.
+## To make a request, you will need to supply four values.
 
 You will need to supply the following:
  * An origin in latitude and longitude
