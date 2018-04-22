@@ -23,16 +23,18 @@ For example, if you wanted a forecast for Leicester, England within 100 meters o
 If you supplied 52.6369, 1.1398 and 100 and 09/07/2018/23/55, you would get a weather forecast within 100 meters of that lat/long on September, 7, 2018 at 11 PM and 23 minutes.
 
 The forecast would encompass the following area within the red circle at 11:23 PM on September 7, 2018.
+
+
 ![image of Leicester with radius](/images/leicester-map-with-radius.jpg)
 
 
 # What type and kind of data does GetMyWeather return?
 
-GetMyWeather provides four weather parameters: temperature, humidity, wind speed, and chance of precipitation.
+GetMyWeather provides four weather values: temperature, humidity, wind speed, and chance of precipitation.
 
-## Parameters
+## Values
 
-Parameter | Returned value | Example
+Value | Returned number | Example
 ----------| ---------- | ---
 Temperature |  A number that represents degrees Fahrenheit | `72` means 72 degrees Fahrenheit
 Wind speed | A number that represents kph (kilometers per hour) | `21` means 21 kph
@@ -46,12 +48,12 @@ Precipitation | A number between 0-100 that represents a percentage| `50` means 
 
 # How do I make requests to GetMyWeather?
 
-## To make a request, you will need to supply four values.
+## To make a request, you will need to supply four parameters.
 
-You will need to supply the following information:
+You will need to supply the following parameters:
  * **ORIGIN**: this must be supplied in latitude and longitude
  * **METERS AWAY FROM ORIGIN**: this must be supplied as a numerical value
- * **TIME**: this must be supplied in the month/day/year format and the time in hr/minute format
+ * **TIME**: this must be supplied in the month/day/year format and the time in hour/minute format
  * **API KEY**: this must be supplied for all requests
 
 
@@ -65,6 +67,9 @@ For example, Leicester's latitude and longitude would be supplied as the followi
 
 `52.6369:1.1398`
 
+**BE CAUTIOUS**: GetMyWeather must have location data in latitude:longitude format. If you provide incorrect values, you will get the following error message returned:
+`error: invalid location data supplied`
+
 #### What if I only have the zip code or address? Can I use that?
 
 GetMyWeather only uses latitude and longitude. Therefore, you will need to convert a user's location value into latitude and longitude before making a request to the API.
@@ -73,12 +78,12 @@ Here is a reference link for converting location data: [How do I convert a locat
 
 ### Meters away from origin
 
-Provide a numerical value that represents meters away from origin.
-|What is the largest value I can supply?|
+Provide a numerical value that represents the meters away from the origin.
+(What is the largest value I can supply?)
 
-**BE CAUTIOUS**: A value not within ?range? will return the following error message:
+**BE CAUTIOUS**: A value not within (range?) will return the following error message:
 
-`error: radius value not within range.`
+`error: radius value not within range`
 
 ### Time
 
@@ -91,9 +96,9 @@ For example, `09/07/2018/23/55` is a request on for September, 7, 2018 at 11PM a
 
 **BE CAUTIOUS**: Values not provided in this format will return the following error message:
 
-`error: date range incorrect.`
+`error: date range incorrect`
 
-#### Date provided and confidence of forecast
+## Date provided and confidence of forecast
 
 Predicting weather is hard. Use this table to accurately inform your users of the confidence for the forecast.
 
@@ -111,7 +116,7 @@ Days out | Confidence as a percentage
 Register for a API key at getmyweather.com. To register, you will need a credit card.
 
 **BE CAUTIOUS**: Without an API key, you cannot make a request. You will receive the following error message:
-`error: request invalid.
+`error: request invalid`
 
 # GetMyWeather request example
 
@@ -150,7 +155,7 @@ sample return package
     <div class="temperature">78</div>
     <div class="windspeed">15</div>
     <div class="chanceRain">30</div>
-    <div class="trust">80</div>
+    <div class="humidity">80</div>
 </div>
 ```
 
