@@ -75,7 +75,7 @@ weatherForecast =
 </script>
 
 //Calling getWeather
-<script async defer
+<script async defer>
 src="https:www.getmyweather.com/getWeather?
 key=<Your_API_Key>&
 callback=initMap&
@@ -99,7 +99,6 @@ sample return package
     <div class="trust">80</div>
 </div>
 ```
-
 
 
 ### Origin point in latitude and longitude
