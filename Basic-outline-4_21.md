@@ -1,5 +1,5 @@
 # What is the GetMyWeater API?
-The GetMyWeather API provides micro weather forecasts. It provides the temperature, wind speed, humidity, the chance of precipitation.
+The GetMyWeather API provides weather forecasts for a user-specified region and time. It provides the temperature, wind speed, humidity, the chance of precipitation for that region at that time.
 
 # How can I use the GetMyWeather API?
 
@@ -12,15 +12,18 @@ Developers can use the GetMyWeather API for a variety of reasons.
 
 GetMyWeather's confidence in its predictions are a function of how far in the future the request is. Its confidence is high (up to 90 and 100 percent) for 1 and 2 days from the present moment. The confidence decreases as predictions move further out. At 10 days out, GetMyWeather will be only 50 percent confident. After 10 days, the confidence range is significantly less than 50 percent.
 
+## How are region and time determined?
 
-# What do I need to use this API?
+A region is determined by two values: origin and radius. The origin must be given in latitude and longitude. The radius must be given as a numerical value (?can it be floating point) and represent meters from the origin.
 
-To use the GetMyWeather, you will need know to simple HTML and Javascript syntax.
+The time is determined by a day and time. The day must be provided with in month/day/year format and time must be provided in hour/minute format using the 24 hour standard.
 
-# How much does this it cost?
+For example, if you wanted a forecast for Leicester, England within 100 meters of the city on a given day, you would supply the latitude and longitude for Leicester as the origin point, 100 as the value in meters away from the origin, and then the day, month, year, and then the hour and minute for the desired forecast.
 
-- First 100,000 calls/day:  $.01 cent per call
-- After 100,000 calls/day: contact us at 1-888-alan-getweather
+For example, if you supplied 52.6369, 1.1398 and 100 and 09/07/2018/23/55, you would get a weather forecast within 100 meters of that lat/long on September, 7, 2018 at 11 PM and 23 minutes.
+
+The forecast would encompass the following area within the red circle at 11:23 PM.
+![image of Leicester with radius](/images/leicester-map-with-radius.jpg)
 
 
 # What type and kind of data does GetMyWeather return?
@@ -36,7 +39,22 @@ Wind speed | A number that represents kph (kilometers per hour) | `21` means 21 
 Humidity | A number between 0-100 that represents a percentage| `80` means 80 percent humidity.
 Precipitation | A number between 0-100 that represents a percentage| `50` means 50 percent chance of precipitation
 
+# What do I need to use this API?
+
+To use the GetMyWeather, you will need know to simple HTML and Javascript syntax.
+
+# How much does this it cost?
+
+- First 100,000 calls/day:  $.01 cent per call
+- After 100,000 calls/day: contact us at 1-888-alan-getweather
+
 # How do I make requests to GetMyWeather?
+
+To make a request, you will need to supply four values.
+
+- An origin point, in latitude and longitude
+- Specificity in
+
 
 ** Do more than tell developers what they can expect within those ranges.
 'If you do this, this will happen. If you put too small of a location, you will get x returned.' I need to tell developers of the CONSEQUENCES of their calls for all the parameters. **
