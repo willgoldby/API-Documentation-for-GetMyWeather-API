@@ -52,10 +52,10 @@ Precipitation | A number between 0-100 that represents a percentage| `50` means 
 ## To make a request, you will need to supply four values.
 
 You will need to supply the following information:
- * **origin**: this must be supplied in latitude and longitude
- * **meters away from origin**: this must be supplied as a numerical value
- * **time**: this must be supplied in the month/day/year format and the time in hr/minute format
- * **API key**: this must be supplied for all requests
+ * **ORIGIN**: this must be supplied in latitude and longitude
+ * **METERS AWAY FROM ORIGIN**: this must be supplied as a numerical value
+ * **TIME**: this must be supplied in the month/day/year format and the time in hr/minute format
+ * **API KEY**: this must be supplied for all requests
 
 
 ### Origin point in latitude and longitude
