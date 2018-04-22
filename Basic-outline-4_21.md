@@ -50,6 +50,9 @@ To use GetMyWeather, you will need know to simple HTML and Javascript syntax.
 
 # How do I make requests to GetMyWeather?
 
+** Do more than tell developers what they can expect within those ranges.
+'If you do this, this will happen. If you put too small of a location, you will get x returned.' I need to tell developers of the CONSEQUENCES of their calls for all the parameters. **
+
 ## To make a request, you will need to supply four values.
 
 You will need to supply the following information:
@@ -57,48 +60,6 @@ You will need to supply the following information:
  * A numerical value that represent **meters away from origin**
  * The **time** in month/day/year format and the time in hr/minute format
  * An **API key**.
-
-
-#### Get My Weather request example
-
-```javascript
-//Injecting result into HTML page
-<div id='forecast'></div>
-
-//Initializing getWeather
-<script type='text/javascript'>
-var weatherForecast;
-function init(){
-weatherForecast =
-  new getWeather (document.getElementByID('forecast'))
-}
-</script>
-
-//Calling getWeather
-<script async defer
-src="https:www.getmyweather.com/getWeather?"
-key=<Your_API_Key>&
-callback=initMap&
-location=<Lat:Long>&
-specificity=<Specificity>&
-time=<Time>&
->
-</script>
-
-```
-
-#### Returned values
-
-sample return package
-```javascript
-
-<div class="forcast">
-    <div class="temperature">78</div>
-    <div class="windspeed">15</div>
-    <div class="chanceRain">30</div>
-    <div class="trust">80</div>
-</div>
-```
 
 
 ### Origin point in latitude and longitude
@@ -153,13 +114,48 @@ Days out | Confidence as a percentage
 10 or more | less than 50 %
 
 
-
-### API Key
-** Do more than tell developers what they can expect within those ranges.
-'If you do this, this will happen. If you put too small of a location, you will get x returned.' I need to tell developers of the CONSEQUENCES of their calls for all the parameters. **
+### API key
+Register for a API key at getmyweather.com. To register, you will need a credit card.
 
 
+#### Get My Weather request example
 
+```javascript
+//Injecting result into HTML page
+<div id='forecast'></div>
 
+//Initializing getWeather
+<script type='text/javascript'>
+var weatherForecast;
+function init(){
+weatherForecast =
+  new getWeather (document.getElementByID('forecast'))
+}
+</script>
 
-some users will not have lat long, so convert zip to lat long ie campers, or areas that change
+//Calling getWeather
+<script async defer
+src="https:www.getmyweather.com/getWeather?"
+key=<Your_API_Key>&
+callback=initMap&
+location=<Lat:Long>&
+specificity=<Specificity>&
+time=<Time>&
+>
+</script>
+
+```
+
+#### Returned values
+
+sample return package
+```javascript
+
+<div class="forcast">
+    <div class="temperature">78</div>
+    <div class="windspeed">15</div>
+    <div class="chanceRain">30</div>
+    <div class="trust">80</div>
+</div>
+```
+
