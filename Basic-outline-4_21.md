@@ -53,10 +53,10 @@ To use GetMyWeather, you will need know to simple HTML and Javascript syntax.
 ## To make a request, you will need to supply four values.
 
 You will need to supply the following information:
- * An *origin* in latitude and longitude
- * A numerical value that represent *meters away from origin*
- * The *time* in month/day/year format and the time in hr/minute format
- * An *API key*.
+ * An **origin** in latitude and longitude
+ * A numerical value that represent **meters away from origin**
+ * The **time** in month/day/year format and the time in hr/minute format
+ * An **API key**.
 
 ### Origin point in latitude and longitude
 
@@ -79,7 +79,7 @@ Here is a reference link for converting location data: [How do I convert a locat
 Provide a numerical value that represents meters away from origin.
 (?What is the largest value I can supply)
 
-*BE CAUTIOUS*: A value not within ?range? will return the following error message:
+**BE CAUTIOUS**: A value not within ?range? will return the following error message:
 
 `error: radius value not within range.`
 
@@ -91,7 +91,7 @@ mm/dd/year/hr/minute
 
 `09/07/2018/23/55` This is a request on for September, 7, 2018 at 11PM and 23 minutes.
 
-*BE CAUTIOUS*: Values not provided in this format will return the following error message:
+**BE CAUTIOUS**: Values not provided in this format will return the following error message:
 
 `error: date range incorrect.`
 
