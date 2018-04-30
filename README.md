@@ -14,7 +14,7 @@ GetMyWeather's confidence is a function of how far in the future the request is 
 
 # How are region and time determined?
 
-A region is determined by providing two values: an origin and a radius. The origin must be given in latitude and longitude. The radius must be given as a numerical value (can it be floating point?) and represents meters from the origin.
+A region is determined by providing two values: an origin and a radius. The origin must be given in latitude and longitude. The radius must be given as a numerical value, which can be a decimal value (floating point) and represents meters from the origin.
 
 The time is determined by providing a specific day at a specific time. The day must be provided within month/day/year format and the time must be provided in the hour/minute format using the 24 hour standard.
 
@@ -42,6 +42,7 @@ Temperature |  A number that represents degrees Fahrenheit | `72` means 72 degre
 Wind speed | A number that represents kph (kilometers per hour) | `21` means 21 kph
 Humidity | A number between 0-100 that represents a percentage| `80` means 80 percent humidity.
 Precipitation | A number between 0-100 that represents a percentage| `50` means 50 percent chance of precipitation
+Trust | A number between 0-100 that represents a percentage of confidence in the forecast| `80` means there is an 80 percent degree of certainty for the predicted forecast
 
 # How much does GetMyWeather cost to use?
 
@@ -82,9 +83,11 @@ Here is a reference link for converting location data: [How do I convert a locat
 ### Meters away from origin
 
 Provide a numerical value that represents the meters away from the origin.
-(What is the largest value I can supply?)
+The value can be a decimal (floating point) but must greater than zero.
 
-**BE CAUTIOUS**: A value not within (range?) will return the following error message:
+**BE CAUTIOUS**: A value larger than 200 will result in a trust value of zero. This occurs because a circle encompassing an area greater than 200 meters includes multiple weather systems, making it difficult to provide an accurate forecast.
+
+**BE CAUTIOUS**: A value less than zero will return the following error message:
 
 > `error: radius value not within range`
 
@@ -154,7 +157,7 @@ time=<Time>&
 sample return package
 ```javascript
 
-<div class="forcast">
+<div class="forecast">
     <div class="temperature">78</div>
     <div class="windspeed">15</div>
     <div class="chanceRain">30</div>
