@@ -32,7 +32,7 @@ ____
 
 # What type and kind of data does GetMyWeather return?
 
-GetMyWeather provides four weather values: temperature, humidity, wind speed, and chance of precipitation.
+GetMyWeather provides four weather values: temperature, humidity, wind speed, and chance of precipitation. It also provides a value for its confidence in the predicted forecast, returned as a percentage.
 
 ## Values
 
@@ -42,7 +42,7 @@ Temperature |  A number that represents degrees Fahrenheit | `72` means 72 degre
 Wind speed | A number that represents kph (kilometers per hour) | `21` means 21 kph
 Humidity | A number between 0-100 that represents a percentage| `80` means 80 percent humidity.
 Precipitation | A number between 0-100 that represents a percentage| `50` means 50 percent chance of precipitation
-Trust | A number between 0-100 that represents a percentage of confidence in the forecast| `80` means there is an 80 percent degree of certainty for the predicted forecast
+Trust | A number between 0-100 that represents a percentage for the confidence in the forecast| `90` means there is a 90 percent degree of certainty for the predicted forecast
 
 # How much does GetMyWeather cost to use?
 
