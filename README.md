@@ -1,4 +1,4 @@
-# What is GetMyWeater API?
+# What is GetMyWeather API?
 The GetMyWeather API provides a weather forecast for a given region and time. It provides the temperature, wind speed, humidity, and chance of precipitation.
 
 # How can I use GetMyWeather API?
