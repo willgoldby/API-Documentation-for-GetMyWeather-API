@@ -1,7 +1,7 @@
 ## Context, audience, and purpose
-As a project for my Software Documentation class at Carnegie Mellon, I documented an a pseudo-web API titled GetMyWeather. 
+As a project for my Software Documentation class at Carnegie Mellon, I documented a pseudo-web API titled GetMyWeather. 
 
-I wrote this as a developer-focused document, explaining how to make an API call, the necessary parameters, and how to interpret the results.
+I wrote this as a developer-focused document, explaining how to make an API call to GetMyWeather, the necessary parameters, and how to interpret the results.
 
 # What is GetMyWeather API?
 The GetMyWeather API provides a weather forecast for a given region and time. It provides the temperature, wind speed, humidity, and chance of precipitation.
