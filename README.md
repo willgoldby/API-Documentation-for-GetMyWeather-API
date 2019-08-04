@@ -1,5 +1,5 @@
-## Context, audience, and purpose
-As a project for my Software Documentation class at Carnegie Mellon, I documented a pseudo-web API titled GetMyWeather. 
+# Context, audience, and purpose
+As a project for my **Software Documentation** class at Carnegie Mellon, I documented a pseudo-web API titled GetMyWeather. 
 
 I wrote this as a developer-facing document, explaining how to make an API call to GetMyWeather, the necessary parameters, and how to interpret the results.
 
